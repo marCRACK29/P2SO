@@ -1,4 +1,4 @@
 /home/marcosmartinez/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/marcosmartinez/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -G Ninja -S "/run/media/marcosmartinez/Disco D/Semestre_IV/sistemasOperativos/Tarea_2" -B "/run/media/marcosmartinez/Disco D/Semestre_IV/sistemasOperativos/Tarea_2/cmake-build-debug"
--- Configuring done (0.1s)
+-- Configuring done (0.0s)
 -- Generating done (0.0s)
 -- Build files have been written to: /run/media/marcosmartinez/Disco D/Semestre_IV/sistemasOperativos/Tarea_2/cmake-build-debug

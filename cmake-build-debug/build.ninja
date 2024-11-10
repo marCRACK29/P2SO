@@ -94,7 +94,22 @@ build CMakeFiles/Tarea_2.dir/using_monitor.cpp.o: CXX_COMPILER__Tarea_2_scanned_
   OBJECT_FILE_DIR = CMakeFiles/Tarea_2.dir
   dyndep = CMakeFiles/Tarea_2.dir/CXX.dd
 
-build CMakeFiles/Tarea_2.dir/CXX.dd | /run/media/marcosmartinez/Disco$ D/Semestre_IV/sistemasOperativos/Tarea_2/cmake-build-debug/CMakeFiles/Tarea_2.dir/CXXModules.json CMakeFiles/Tarea_2.dir/main.cpp.o.modmap CMakeFiles/Tarea_2.dir/Monitor_prueba.cpp.o.modmap CMakeFiles/Tarea_2.dir/using_monitor.cpp.o.modmap: CXX_DYNDEP__Tarea_2_Debug CMakeFiles/Tarea_2.dir/main.cpp.o.ddi CMakeFiles/Tarea_2.dir/Monitor_prueba.cpp.o.ddi CMakeFiles/Tarea_2.dir/using_monitor.cpp.o.ddi | /run/media/marcosmartinez/Disco$ D/Semestre_IV/sistemasOperativos/Tarea_2/cmake-build-debug/CMakeFiles/Tarea_2.dir/CXXDependInfo.json
+build CMakeFiles/Tarea_2.dir/Monitor.cpp.o.ddi: CXX_SCAN__Tarea_2_Debug /run/media/marcosmartinez/Disco$ D/Semestre_IV/sistemasOperativos/Tarea_2/Monitor.cpp || cmake_object_order_depends_target_Tarea_2
+  DEP_FILE = CMakeFiles/Tarea_2.dir/Monitor.cpp.o.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/Tarea_2.dir/Monitor.cpp.o.ddi
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJ_FILE = CMakeFiles/Tarea_2.dir/Monitor.cpp.o
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles/Tarea_2.dir/Monitor.cpp.o.ddi.i
+
+build CMakeFiles/Tarea_2.dir/Monitor.cpp.o: CXX_COMPILER__Tarea_2_scanned_Debug /run/media/marcosmartinez/Disco$ D/Semestre_IV/sistemasOperativos/Tarea_2/Monitor.cpp | CMakeFiles/Tarea_2.dir/Monitor.cpp.o.modmap || cmake_object_order_depends_target_Tarea_2 CMakeFiles/Tarea_2.dir/CXX.dd
+  DEP_FILE = CMakeFiles/Tarea_2.dir/Monitor.cpp.o.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles/Tarea_2.dir/Monitor.cpp.o.modmap
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/Tarea_2.dir
+  OBJECT_FILE_DIR = CMakeFiles/Tarea_2.dir
+  dyndep = CMakeFiles/Tarea_2.dir/CXX.dd
+
+build CMakeFiles/Tarea_2.dir/CXX.dd | /run/media/marcosmartinez/Disco$ D/Semestre_IV/sistemasOperativos/Tarea_2/cmake-build-debug/CMakeFiles/Tarea_2.dir/CXXModules.json CMakeFiles/Tarea_2.dir/main.cpp.o.modmap CMakeFiles/Tarea_2.dir/Monitor_prueba.cpp.o.modmap CMakeFiles/Tarea_2.dir/using_monitor.cpp.o.modmap CMakeFiles/Tarea_2.dir/Monitor.cpp.o.modmap: CXX_DYNDEP__Tarea_2_Debug CMakeFiles/Tarea_2.dir/main.cpp.o.ddi CMakeFiles/Tarea_2.dir/Monitor_prueba.cpp.o.ddi CMakeFiles/Tarea_2.dir/using_monitor.cpp.o.ddi CMakeFiles/Tarea_2.dir/Monitor.cpp.o.ddi | /run/media/marcosmartinez/Disco$ D/Semestre_IV/sistemasOperativos/Tarea_2/cmake-build-debug/CMakeFiles/Tarea_2.dir/CXXDependInfo.json
 
 
 # =============================================================================
@@ -104,7 +119,7 @@ build CMakeFiles/Tarea_2.dir/CXX.dd | /run/media/marcosmartinez/Disco$ D/Semestr
 #############################################
 # Link the executable Tarea_2
 
-build Tarea_2: CXX_EXECUTABLE_LINKER__Tarea_2_Debug CMakeFiles/Tarea_2.dir/main.cpp.o CMakeFiles/Tarea_2.dir/Monitor_prueba.cpp.o CMakeFiles/Tarea_2.dir/using_monitor.cpp.o
+build Tarea_2: CXX_EXECUTABLE_LINKER__Tarea_2_Debug CMakeFiles/Tarea_2.dir/main.cpp.o CMakeFiles/Tarea_2.dir/Monitor_prueba.cpp.o CMakeFiles/Tarea_2.dir/using_monitor.cpp.o CMakeFiles/Tarea_2.dir/Monitor.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Tarea_2.dir
   POST_BUILD = :

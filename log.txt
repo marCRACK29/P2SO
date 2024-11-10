@@ -1,0 +1,5 @@
+Log de ejecución
+Productor 0 produjo: 83 | Elementos en cola: 1
+Productor 1 produjo: 86 | Elementos en cola: 2
+Productor 2 produjo: 77 | Elementos en cola: 3
+Consumidor 2 consumió: 83 | Elementos en cola: 2
