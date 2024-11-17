@@ -1,5 +1,4 @@
 #include "Monitor.h"
-#include <thread>
 #include <chrono>
 #include <cstdlib>
 using namespace std;
@@ -26,7 +25,7 @@ void consumidor(Monitor &monitor, int id, int timeout) { /* Función que simula 
 }
 
 int main(int argc, char **argv) {
-    // Verificación del número de argumentos
+    /* Verificación del número de argumentos */
     if (argc != 9) {
         cerr << "Uso incorrecto: ./simulapc -p <num_productores> -c <num_consumidores> -s <tam_inicial> -t <tiempo_espera>" << endl;
         return 1;

@@ -4,11 +4,11 @@
 
 #include <iostream>
 #include <vector>
-#include <queue>
 #include <condition_variable>
 #include <mutex>
 #include <thread>
 #include <fstream>
+#include <algorithm>
 
 class Monitor {
 private:
