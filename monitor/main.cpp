@@ -1,9 +1,12 @@
 #include "Monitor.h"
-#include <thread>
 #include <chrono>
 #include <cstdlib>
 using namespace std;
 
+/**
+ * g++ main.cpp Monitor.cpp -o simulapc
+ * ./simulapc -p 5 -c 5 -s 10 -t 5
+ */
 void productor(Monitor &monitor, int id) { /* Función que simula las hebras productas */
     for (int i = 0; i < 20; ++i) {
         monitor.agregar(rand() % 100, id); /* Agregar un item aleatorio al buffer */
@@ -22,7 +25,7 @@ void consumidor(Monitor &monitor, int id, int timeout) { /* Función que simula 
 }
 
 int main(int argc, char **argv) {
-    // Verificación del número de argumentos
+    /* Verificación del número de argumentos */
     if (argc != 9) {
         cerr << "Uso incorrecto: ./simulapc -p <num_productores> -c <num_consumidores> -s <tam_inicial> -t <tiempo_espera>" << endl;
         return 1;
