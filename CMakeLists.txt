@@ -6,5 +6,5 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(Tarea_2
         monitor/main.cpp
         monitor/Monitor.cpp
-        mem_virtual/memoria.cpp
+        memoria.cpp
 )

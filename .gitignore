@@ -1,6 +1,6 @@
 # CLion IDE files
 .idea/
 cmake-build-debug/
-mem_virtual/clases.txt
-mem_virtual/referencias.txt
+clases.txt
+referencias.txt
 monitor/log.txt

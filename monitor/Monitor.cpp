@@ -14,7 +14,7 @@ Monitor::~Monitor() {
 void Monitor::resize_buffer(bool expand) {
     int nueva_capacidad;
     {
-        unique_lock lock(mtx);
+        unique_lock<mutex> lock(mtx);
         if(expand)
             nueva_capacidad = 2 * capacidad;
         else
@@ -30,7 +30,7 @@ void Monitor::resize_buffer(bool expand) {
 }
 
 void Monitor::agregar(int item, int id_productor) {
-    unique_lock lock(mtx);
+    unique_lock<mutex> lock(mtx);
     not_full.wait(lock, [this](){ return contador < capacidad; });  /* Esperar mientras el buffer esta lleno */
 
     /* Agregar el item al buffer */
@@ -51,7 +51,7 @@ void Monitor::agregar(int item, int id_productor) {
 }
 
 bool Monitor::sacar(int &item, int id_consumidor, int timeout) {
-    unique_lock lock(mtx);
+    unique_lock<mutex> lock(mtx);
     if(!not_empty.wait_for(lock, chrono::seconds(timeout), [this](){ return contador > 0; })) {
         logfile << "Consumidor " << id_consumidor << " no pudo consumir: timeout" << endl;
         printf("Consumidor %d no pudo consumir: timeout\n", id_consumidor);
