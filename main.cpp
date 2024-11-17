@@ -4,6 +4,10 @@
 #include <cstdlib>
 using namespace std;
 
+/**
+ * g++ main.cpp Monitor.cpp -o simulapc
+ * ./simulapc -p 5 -c 5 -s 10 -t 5
+ */
 void productor(Monitor &monitor, int id) { /* Función que simula las hebras productas */
     for (int i = 0; i < 20; ++i) {
         monitor.agregar(rand() % 100, id); /* Agregar un item aleatorio al buffer */
