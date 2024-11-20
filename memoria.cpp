@@ -148,11 +148,11 @@ struct tablaDePaginaHash
             }
         }
 
-        std::cerr << "Error: No se encontró la página virtual " << numeroPaginaVirtual << " para modificar el bit válido." << std::endl;
+        // std::cerr << "Error: No se encontró la página virtual " << numeroPaginaVirtual << " para modificar el bit válido." << std::endl;
     }
 };
 
-void fifo(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> &referencias)
+int fifo(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> &referencias)
 {
     int fallosPagina = 0; // Contador de fallos de página
 
@@ -174,14 +174,14 @@ void fifo(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> 
         if (paginaEnMemoria)
         {
             // La página ya está en memoria, no hay fallo
-            std::cout << "Acceso: " << ref << " | Hit | Estado de marcos: ";
+            // std::cout << "Acceso: " << ref << " | Hit | Estado de marcos: ";
             marco.printfs();
             continue;
         }
 
         // Fallo de página
         fallosPagina++;
-        std::cout << "Acceso: " << ref << " | Miss | ";
+        // std::cout << "Acceso: " << ref << " | Miss | ";
 
         if (marco.lleno)
         {
@@ -205,11 +205,11 @@ void fifo(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> 
             }
             else
             {
-                std::cerr << "Advertencia: No se encontró la página virtual " << paginaARemover
-                          << " para modificar el bit válido." << std::endl;
+                // std::cerr << "Advertencia: No se encontró la página virtual " << paginaARemover
+                //   << " para modificar el bit válido." << std::endl;
             }
 
-            std::cout << "Evict: " << paginaARemover << " | ";
+            // std::cout << "Evict: " << paginaARemover << " | ";
         }
         else
         {
@@ -221,13 +221,12 @@ void fifo(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> 
         // Añadir la nueva página a la tabla
         tabla.insertar(ref, marco.numeroMarco - 1);
 
-        std::cout << "Estado de marcos: \n";
+        // std::cout << "Estado de marcos: \n";
         marco.printfs();
     }
-
-    std::cout << "Fallos de página (FIFO): " << fallosPagina << std::endl;
+    return fallosPagina;
 }
-void lru(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> &referencias)
+int lru(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> &referencias)
 {
     std::list<int> listaLRU; // Lista para rastrear el uso reciente de páginas
     int fallosPagina = 0;
@@ -240,7 +239,7 @@ void lru(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> &
         {
             // Fallo de página
             fallosPagina++;
-            std::cout << "Acceso: " << ref << " | Miss\n";
+            // std::cout << "Acceso: " << ref << " | Miss\n";
 
             // Si el marco está lleno, expulsar la página menos recientemente usada
             if (marco.lleno)
@@ -263,11 +262,11 @@ void lru(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> &
                         }
                     }
 
-                    std::cout << "Evict: " << paginaARemover << "\n";
+                    // std::cout << "Evict: " << paginaARemover << "\n";
                 }
                 else
                 {
-                    std::cerr << "Error: Lista LRU vacía al intentar expulsar una página." << std::endl;
+                    // std::cerr << "Error: Lista LRU vacía al intentar expulsar una página." << std::endl;
                 }
             }
 
@@ -275,7 +274,7 @@ void lru(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> &
             int indiceDisponible = marco.indiceDisponible();
             if (indiceDisponible == -1)
             {
-                std::cerr << "Error: No hay marcos disponibles para la página " << ref << std::endl;
+                // std::cerr << "Error: No hay marcos disponibles para la página " << ref << std::endl;
                 continue;
             }
             marco.map(ref, indiceDisponible, true); // Asignar página al marco
@@ -290,29 +289,28 @@ void lru(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> &
         listaLRU.push_front(ref); // Agregar o mover la página al frente
 
         // Imprimir el estado actual de los marcos
-        std::cout << "Estado de marcos: ";
-        marco.printfs();
+        // std::cout << "Estado de marcos: ";
+        // marco.printfs();
     }
-
-    std::cout << "Fallos de página (LRU): " << fallosPagina << std::endl;
+    return fallosPagina;
 }
 
-void lruReloj(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> &referencias)
+int lruReloj(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> &referencias)
 {
     std::vector<int> bitsReferencia(marco.numeroMarco, 0); // Bits de referencia para cada marco
     int punteroReloj = 0;                                  // Puntero del reloj
     int fallosPagina = 0;
 
-    auto printEstado = [&]()
-    {
-        std::cout << "Estado actual de marcos y bits de referencia:\n";
-        for (int i = 0; i < marco.numeroMarco; ++i)
-        {
-            std::cout << "Marco[" << i << "]: " << marco.marcos[i]
-                      << " (R=" << bitsReferencia[i] << ")"
-                      << (i == punteroReloj ? " <- Puntero" : "") << "\n";
-        }
-    };
+    // auto printEstado = [&]()
+    // {
+    //     std::cout << "Estado actual de marcos y bits de referencia:\n";
+    //     for (int i = 0; i < marco.numeroMarco; ++i)
+    //     {
+    //         std::cout << "Marco[" << i << "]: " << marco.marcos[i]
+    //                   << " (R=" << bitsReferencia[i] << ")"
+    //                   << (i == punteroReloj ? " <- Puntero" : "") << "\n";
+    //     }
+    // };
 
     for (int ref : referencias)
     {
@@ -334,14 +332,14 @@ void lruReloj(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<i
         {
             // Si la página ya está en memoria, actualizar el bit de referencia
             bitsReferencia[marcoIndex] = 1;
-            std::cout << "Acceso: " << ref << " | Hit\n";
-            printEstado();
+            // std::cout << "Acceso: " << ref << " | Hit\n";
+            // printEstado();
             continue;
         }
 
         // Fallo de página
         fallosPagina++;
-        std::cout << "Acceso: " << ref << " | Miss\n";
+        // std::cout << "Acceso: " << ref << " | Miss\n";
 
         if (marco.lleno)
         {
@@ -352,7 +350,7 @@ void lruReloj(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<i
                 {
                     // Encontramos un marco con bit de referencia en 0
                     int paginaARemover = marco.marcos[punteroReloj];
-                    std::cout << "Evict: " << paginaARemover << "\n";
+                    // std::cout << "Evict: " << paginaARemover << "\n";
 
                     // Actualizar tabla y liberar marco
                     tabla.modificarBitValido(paginaARemover, 0);
@@ -370,7 +368,7 @@ void lruReloj(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<i
                     // Si hemos recorrido todos los marcos y no encontramos un bit en 0
                     if (punteroReloj == 0)
                     {
-                        std::cout << "Todos los bits estaban en 1, reiniciando bits.\n";
+                        // std::cout << "Todos los bits estaban en 1, reiniciando bits.\n";
                         for (int &bit : bitsReferencia)
                         {
                             bit = 0;
@@ -391,17 +389,16 @@ void lruReloj(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<i
             }
             else
             {
-                std::cerr << "Error: No hay marcos disponibles para la página " << ref << "\n";
+                // std::cerr << "Error: No hay marcos disponibles para la página " << ref << "\n";
             }
         }
 
-        printEstado();
+        // printEstado();
     }
-
-    std::cout << "Fallos de página (LRU Reloj): " << fallosPagina << "\n";
+    return fallosPagina;
 }
 
-void OPTIMO(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> &referencias)
+int OPTIMO(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> &referencias)
 {
     int fallosPagina = 0;
 
@@ -414,13 +411,13 @@ void OPTIMO(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int
         if (entrada != nullptr && entrada->valido == 1)
         {
             // La página ya está en memoria; no es un fallo de página
-            std::cout << "Acceso: " << ref << " | Hit\n";
+            // std::cout << "Acceso: " << ref << " | Hit\n";
             continue;
         }
 
         // Fallo de página
         fallosPagina++;
-        std::cout << "Acceso: " << ref << " | Miss\n";
+        // std::cout << "Acceso: " << ref << " | Miss\n";
 
         // Si el marco está lleno, buscar la página óptima para reemplazar
         if (marco.lleno)
@@ -446,7 +443,7 @@ void OPTIMO(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int
             // Reemplazar la página seleccionada
             if (paginaARemover != -1)
             {
-                std::cout << "Evict: " << paginaARemover << "\n";
+                // std::cout << "Evict: " << paginaARemover << "\n";
                 tabla.modificarBitValido(paginaARemover, 0); // Marcar página como inválida
                 for (int j = 0; j < marco.numeroMarco; ++j)
                 {
@@ -461,7 +458,7 @@ void OPTIMO(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int
             }
             else
             {
-                std::cerr << "Error: No se encontró una página para reemplazar." << std::endl;
+                // std::cerr << "Error: No se encontró una página para reemplazar." << std::endl;
                 continue;
             }
         }
@@ -479,11 +476,10 @@ void OPTIMO(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int
         }
 
         // Imprimir el estado actual de los marcos
-        std::cout << "Estado de marcos: ";
+        // std::cout << "Estado de marcos: ";
         marco.printfs();
     }
-
-    std::cout << "Fallos de página (Óptimo): " << fallosPagina << std::endl;
+    return fallosPagina;
 }
 void procesarArchivo(const std::string &archivo, std::vector<int> &referencias)
 {
@@ -553,28 +549,28 @@ int main(int argc, char *argv[])
 
     tablaDePaginaHash tabla(numeroMarcos);
     espacioMarco marcos(numeroMarcos);
+    int fallosPagina;
 
     // Llamar al algoritmo seleccionado.
     if (algoritmo == "FIFO")
     {
-        fifo(tabla, marcos, referencias);
+        fallosPagina = fifo(tabla, marcos, referencias);
+        std::cout << "Fallos de página (FIFO): " << fallosPagina << std::endl;
     }
     else if (algoritmo == "LRU")
     {
-        lru(tabla, marcos, referencias);
+        fallosPagina = lru(tabla, marcos, referencias);
+        std::cout << "Fallos de página (LRU): " << fallosPagina << std::endl;
     }
     else if (algoritmo == "OPTIMO")
     {
-        OPTIMO(tabla, marcos, referencias);
+        fallosPagina = OPTIMO(tabla, marcos, referencias);
+        std::cout << "Fallos de página (Óptimo): " << fallosPagina << std::endl;
     }
     else if (algoritmo == "LRUR")
     {
-        lruReloj(tabla, marcos, referencias);
-        std::cout << "Estado final de los marcos:" << std::endl;
-        marcos.printfs();
-
-        std::cout << "Estado final de la tabla de páginas:" << std::endl;
-        tabla.printTabla();
+        fallosPagina = lruReloj(tabla, marcos, referencias);
+        std::cout << "Fallos de página (LRU Reloj): " << fallosPagina << "\n";
     }
     else
     {
