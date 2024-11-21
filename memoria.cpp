@@ -1,14 +1,10 @@
 #include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
-#include <sys/stat.h>
 #include <vector>
 #include <iostream>
 #include <fstream>
-#include <sstream>
 #include <list>
 #include <getopt.h>
-#include <queue>
 #include <algorithm>
 
 struct espacioMarco
