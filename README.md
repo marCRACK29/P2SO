@@ -5,10 +5,11 @@
 <p>Para compilar y ejecutar el proyecto, sigue estos pasos desde la carpeta <code>src</code>:</p>
 
 <h3>1. Compilación</h3>
-<p>Ingresa el siguiente comando en la terminal:</p>
+<p>Dentro del directorio raiz, ingrese el siguiente comando en la terminal:</p>
 <pre>
 <code>make</code>
 </pre>
+<p>Este comando compilará los dos programas: <code>simulapc</code> para el problema de productor-consumidor y <code>memoria</code> para el problema de memoria virtual.</p>
 
 <h3>2. Ejecución</h3>
 <p>Una vez compilado, tienes dos opciones:</p>
@@ -33,13 +34,13 @@
 <ul>
   <li><code>-m</code>: Número de marcos de página.</li>
   <li><code>-a</code>: Algoritmo de reemplazo (<code>FIFO</code>, <code>LRU</code>, <code>lruReloj</code>, <code>OPTIMO</code>).</li>
-  <li><code>-f</code>: Archivo con referencias de páginas  (por defecto en el proyecto se encuentra referencias.txt). </li>
+  <li><code>-f</code>: Archivo .txt con referencias de páginas  (por defecto en el proyecto se encuentra referencias.txt). </li>
 </ul>
 
 
 
-### Limpieza carpeta src (opcional):
-Para limpiar la carpeta src de los archivos generados por el comando make, se debe ingresar el siguiente comando en la terminal (estando en la carpeta src):
+### Limpieza de archivos ejecutables (opcional):
+Para limpiar la carpeta src de los archivos generados por el comando make, se debe ingresar el siguiente comando en la terminal (estando en la carpeta raiz):
 
 ```sh
 make clean

@@ -1,0 +1,87 @@
+Log de ejecución
+Productor 0 produjo: 86 | Elementos en cola: 1
+Productor 1 produjo: 15 | Elementos en cola: 2
+Productor 2 produjo: 35 | Elementos en cola: 3
+Productor 3 produjo: 92 | Elementos en cola: 4
+Consumidor 4 consumió: 86 | Elementos en cola: 3
+Reduciendo el tamaño de la cola a 6 elementos
+Productor 6 produjo: 59 | Elementos en cola: 4
+Productor 7 produjo: 26 | Elementos en cola: 5
+Productor 9 produjo: 72 | Elementos en cola: 6
+Ampliando el tamaño de la cola a 12 elementos
+Consumidor 1 consumió: 15 | Elementos en cola: 5
+Consumidor 2 consumió: 35 | Elementos en cola: 4
+Consumidor 3 consumió: 92 | Elementos en cola: 3
+Reduciendo el tamaño de la cola a 6 elementos
+Consumidor 5 consumió: 59 | Elementos en cola: 2
+Consumidor 6 consumió: 26 | Elementos en cola: 1
+Reduciendo el tamaño de la cola a 4 elementos
+Consumidor 7 consumió: 72 | Elementos en cola: 0
+Productor 4 produjo: 21 | Elementos en cola: 1
+Consumidor 9 consumió: 21 | Elementos en cola: 0
+Productor 5 produjo: 27 | Elementos en cola: 1
+Consumidor 8 consumió: 27 | Elementos en cola: 0
+Productor 0 produjo: 11 | Elementos en cola: 1
+Consumidor 0 consumió: 11 | Elementos en cola: 0
+Productor 1 produjo: 67 | Elementos en cola: 1
+Productor 2 produjo: 82 | Elementos en cola: 2
+Productor 3 produjo: 62 | Elementos en cola: 3
+Consumidor 4 consumió: 67 | Elementos en cola: 2
+Consumidor 1 consumió: 82 | Elementos en cola: 1
+Productor 7 produjo: 29 | Elementos en cola: 2
+Productor 9 produjo: 22 | Elementos en cola: 3
+Consumidor 6 consumió: 62 | Elementos en cola: 2
+Consumidor 2 consumió: 29 | Elementos en cola: 1
+Productor 4 produjo: 69 | Elementos en cola: 2
+Consumidor 5 consumió: 22 | Elementos en cola: 1
+Productor 6 produjo: 67 | Elementos en cola: 2
+Consumidor 7 consumió: 69 | Elementos en cola: 1
+Consumidor 3 consumió: 67 | Elementos en cola: 0
+Productor 5 produjo: 93 | Elementos en cola: 1
+Consumidor 9 consumió: 93 | Elementos en cola: 0
+Productor 0 produjo: 11 | Elementos en cola: 1
+Consumidor 0 consumió: 11 | Elementos en cola: 0
+Productor 2 produjo: 73 | Elementos en cola: 1
+Consumidor 8 consumió: 73 | Elementos en cola: 0
+Productor 7 produjo: 84 | Elementos en cola: 1
+Consumidor 4 consumió: 84 | Elementos en cola: 0
+Productor 9 produjo: 98 | Elementos en cola: 1
+Consumidor 1 consumió: 98 | Elementos en cola: 0
+Productor 4 produjo: 15 | Elementos en cola: 1
+Consumidor 2 consumió: 15 | Elementos en cola: 0
+Productor 6 produjo: 13 | Elementos en cola: 1
+Consumidor 7 consumió: 13 | Elementos en cola: 0
+Productor 5 produjo: 91 | Elementos en cola: 1
+Consumidor 9 consumió: 91 | Elementos en cola: 0
+Productor 2 produjo: 73 | Elementos en cola: 1
+Consumidor 6 consumió: 73 | Elementos en cola: 0
+Productor 9 produjo: 96 | Elementos en cola: 1
+Consumidor 8 consumió: 96 | Elementos en cola: 0
+Productor 6 produjo: 25 | Elementos en cola: 1
+Consumidor 4 consumió: 25 | Elementos en cola: 0
+Productor 5 produjo: 27 | Elementos en cola: 1
+Consumidor 1 consumió: 27 | Elementos en cola: 0
+Productor 2 produjo: 5 | Elementos en cola: 1
+Consumidor 2 consumió: 5 | Elementos en cola: 0
+Productor 9 produjo: 29 | Elementos en cola: 1
+Consumidor 7 consumió: 29 | Elementos en cola: 0
+Productor 6 produjo: 57 | Elementos en cola: 1
+Consumidor 0 consumió: 57 | Elementos en cola: 0
+Productor 2 produjo: 82 | Elementos en cola: 1
+Consumidor 5 consumió: 82 | Elementos en cola: 0
+Productor 6 produjo: 67 | Elementos en cola: 1
+Consumidor 2 consumió: 67 | Elementos en cola: 0
+Productor 2 produjo: 64 | Elementos en cola: 1
+Consumidor 9 consumió: 64 | Elementos en cola: 0
+Productor 2 produjo: 87 | Elementos en cola: 1
+Consumidor 3 consumió: 87 | Elementos en cola: 0
+Consumidor 6 no pudo consumir: timeout
+Consumidor 8 no pudo consumir: timeout
+Consumidor 4 no pudo consumir: timeout
+Consumidor 1 no pudo consumir: timeout
+Consumidor 7 no pudo consumir: timeout
+Consumidor 0 no pudo consumir: timeout
+Consumidor 5 no pudo consumir: timeout
+Consumidor 2 no pudo consumir: timeout
+Consumidor 9 no pudo consumir: timeout
+Consumidor 3 no pudo consumir: timeout
