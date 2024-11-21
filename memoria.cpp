@@ -175,7 +175,7 @@ int fifo(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> &
         {
             // La página ya está en memoria, no hay fallo
             // std::cout << "Acceso: " << ref << " | Hit | Estado de marcos: ";
-            marco.printfs();
+            // marco.printfs();
             continue;
         }
 
@@ -222,7 +222,7 @@ int fifo(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int> &
         tabla.insertar(ref, marco.numeroMarco - 1);
 
         // std::cout << "Estado de marcos: \n";
-        marco.printfs();
+        // marco.printfs();
     }
     return fallosPagina;
 }
@@ -477,7 +477,7 @@ int OPTIMO(tablaDePaginaHash &tabla, espacioMarco &marco, const std::vector<int>
 
         // Imprimir el estado actual de los marcos
         // std::cout << "Estado de marcos: ";
-        marco.printfs();
+        // marco.printfs();
     }
     return fallosPagina;
 }
